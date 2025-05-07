@@ -1,0 +1,14 @@
+---
+- name: Install Firefox on Windows servers
+  hosts: windows
+  gather_facts: false
+  tasks:
+    - name: Ensure Chocolatey is installed
+      win_chocolatey:
+        name: chocolatey
+        state: present
+
+    - name: Install Firefox
+      win_chocolatey:
+        name: firefox
+        state: present
